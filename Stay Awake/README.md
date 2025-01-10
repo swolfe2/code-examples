@@ -1,6 +1,6 @@
 The intent of the .py file in here is to keep your computer from timing out on network and/or going to sleep.
 
-The first thing you need to do is download the files to somewhere on your computer.
+The first thing you need to do is download the files to somewhere on your computer and ensure you have the packages in requirements.txt if you are going to use the system tray icon rather than taskbar icon.
 Once complete, the next thing to do is adjust the Stay Awake.bat file and point it to your installation of Python along with the path to the Stay Awake.py file.
 
 Within the .py file, there are some different parameters at the top you can adjust.
