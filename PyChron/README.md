@@ -77,16 +77,24 @@ A modern, desktop time-tracking application built with Python and CustomTkinter.
 ### Quick Start
 
 1. **Download PyChron**:
-   - Go to the [PyChron folder on GitHub](https://github.com/swolfe2/code-examples/tree/main/PyChron)
-   - Click the green **"Code"** button
+   
+   **Option A: Download as ZIP (Easiest)**
+   - Go to the [repository root](https://github.com/swolfe2/code-examples)
+   - Click the green **"Code"** button (top right)
    - Select **"Download ZIP"**
-   - Extract the ZIP file and navigate to the `PyChron` folder
-
-   Or clone the repository:
+   - Extract the ZIP file
+   - Navigate to `code-examples-main/PyChron/` folder
+   
+   **Option B: Clone with Git**
    ```bash
    git clone https://github.com/swolfe2/code-examples.git
    cd code-examples/PyChron
    ```
+   
+   **Option C: Download just the PyChron folder**
+   - Use a browser extension like [GitZip](https://github.com/GitZip/github-plus-extension) or [Download Directory](https://github.com/Download-Directory/download-directory.github.io)
+   - Navigate to the [PyChron folder](https://github.com/swolfe2/code-examples/tree/main/PyChron)
+   - Use the extension to download just that folder
 
 2. **Install dependencies**:
 
