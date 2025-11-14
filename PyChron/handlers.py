@@ -7,6 +7,7 @@ from storage import save_tasks
 from ui import (
     confirm_delete,
     confirm_delete_all,
+    prompt_edit_task_name,
     prompt_note,
     prompt_session_name,
     prompt_task_name,
@@ -87,10 +88,7 @@ class TaskHandlers:
 
     def edit_task_name(self, task):
         """Edit task name."""
-        import customtkinter as ctk
-
-        dialog = ctk.CTkInputDialog(text="Enter new task name:", title="Edit Task")
-        new_name = dialog.get_input()
+        new_name = prompt_edit_task_name(self.app, current_name=task.name)
 
         if new_name and new_name.strip() and new_name not in self.app.tasks:
             old_name = task.name

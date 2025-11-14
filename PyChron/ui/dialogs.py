@@ -61,6 +61,65 @@ def prompt_task_name(parent):
     return result["name"] if result["name"] else None
 
 
+def prompt_edit_task_name(parent, current_name):
+    """Show a CTk modal to edit an existing task name.
+
+    Args:
+        parent: Parent window
+        current_name: Current task name to edit
+
+    Returns:
+        str or None: New task name if entered, None if cancelled
+    """
+    dlg = ctk.CTkToplevel(parent)
+    dlg.title("Edit Task Name")
+    dlg.transient(parent)
+    dlg.grab_set()
+
+    try:
+        parent.update_idletasks()
+        w = 380
+        h = 140
+        x = parent.winfo_rootx() + (parent.winfo_width() - w) // 2
+        y = parent.winfo_rooty() + (parent.winfo_height() - h) // 2
+        dlg.geometry(f"{w}x{h}+{x}+{y}")
+    except Exception:
+        pass
+
+    lbl = ctk.CTkLabel(dlg, text="Enter new task name:")
+    lbl.pack(padx=20, pady=(18, 8))
+
+    entry = ctk.CTkEntry(dlg, placeholder_text="Task name")
+    if current_name:
+        entry.insert(0, current_name)
+    entry.pack(padx=20, pady=8, fill="x")
+    entry.focus()
+    entry.select_range(0, "end")
+
+    result = {"name": None}
+
+    def _on_ok():
+        result["name"] = entry.get().strip()
+        dlg.destroy()
+
+    def _on_cancel():
+        dlg.destroy()
+
+    btn_frame = ctk.CTkFrame(dlg)
+    btn_frame.pack(pady=(0, 12))
+
+    ok_btn = ctk.CTkButton(btn_frame, text="OK", command=_on_ok)
+    ok_btn.pack(side="left", padx=12)
+
+    cancel_btn = ctk.CTkButton(btn_frame, text="Cancel", command=_on_cancel)
+    cancel_btn.pack(side="left", padx=12)
+
+    entry.bind("<Return>", lambda e: _on_ok())
+
+    dlg.wait_window()
+    return result["name"] if result["name"] else None
+
+
 def confirm_delete(parent, task_name):
     """Show a CTk-styled modal confirmation and return True if user confirms.
 
