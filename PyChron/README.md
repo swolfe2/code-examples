@@ -74,8 +74,21 @@ A modern, desktop time-tracking application built with Python and CustomTkinter.
 
 ## 🚀 Installation
 
-1. Clone or download this repository
-2. Install dependencies:
+### Quick Start
+
+1. **Download PyChron**:
+   - Go to the [PyChron folder on GitHub](https://github.com/swolfe2/code-examples/tree/main/PyChron)
+   - Click the green **"Code"** button
+   - Select **"Download ZIP"**
+   - Extract the ZIP file and navigate to the `PyChron` folder
+
+   Or clone the repository:
+   ```bash
+   git clone https://github.com/swolfe2/code-examples.git
+   cd code-examples/PyChron
+   ```
+
+2. **Install dependencies**:
 
 ```bash
 pip install customtkinter openpyxl
